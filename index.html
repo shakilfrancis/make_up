@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Comment Form</title>
+  <script>
+    function toggleOtherInput() {
+      var select = document.getElementById("comment_area");
+      var otherInput = document.getElementById("other_text");
+      if (select.value === "Other") {
+        otherInput.style.display = "inline-block";
+      } else {
+        otherInput.style.display = "none";
+      }
+    }
+  </script>
+</head>
+<body>
+
+  <h3>What about us do you want to comment on?</h3>
+  
+  <div class="form-comment">  
+    
+    <select name="comment_area" id="comment_area" onchange="toggleOtherInput()">
+       
+        <option value="Web Site" disabled selected>Web Site</option>
+        <option value="COMPANY">COMPANY</option>
+        <option value="PRODUCTS">PRODUCTS</option>
+        <option value="STORE">STORE</option>
+        <option value="EMPLOYEE">EMPLOYEE</option>
+        <option value="Other">Other</option>
+    </select>
+    <label for="other_text">: Other:</label>
+    <input type="text" id="other_text" name="other_text" style="display: none;">
+  </div>
+  <br>
+
+  <form>
+    <label for="comments">Enter your comments in the space provided below:</label><br>
+    <textarea id="comments" name="comments" rows="4" cols="50"></textarea><br><br>
+
+    <p>Tell us how to get in touch with you:</p>
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name"><br><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email"><br><br>
+  </form>
+
+</body>
+</html>
